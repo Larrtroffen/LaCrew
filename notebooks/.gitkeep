@@ -1,0 +1,3 @@
+# This directory is intended for Jupyter notebooks for exploration, analysis, etc.
+# Add notebooks here. They should typically be added to .gitignore unless
+# they are cleaned examples intended for version control. 

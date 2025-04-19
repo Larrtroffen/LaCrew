@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "intelliscrape-studio"
+version = "0.1.0"
+authors = [
+  { name="Your Name", email="you@example.com" },
+]
+description = "An LLM-driven intelligent web scraping tool with a Streamlit interface."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Framework :: Streamlit",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+]
+dependencies = [
+    "streamlit>=1.20", # Example version, adjust as needed
+    "pandas>=1.5",
+    "python-dotenv>=1.0",
+    "openai>=1.0", 
+    "google-generativeai>=0.4",
+    "anthropic>=0.20",
+    "duckduckgo_search>=5.0",
+    "requests>=2.28",
+    "beautifulsoup4>=4.11",
+    "lxml>=4.9", # Recommended for BS4 performance
+    "playwright>=1.30", # For browser automation
+    "readability-lxml>=0.8", # For main content extraction
+    "openpyxl>=3.0", # For Excel export in data handler
+    # Add other dependencies from requirements.txt or discovered during refactoring
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "ruff", # Linter/formatter
+    # Add other development tools
+]
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/intelliscrape-studio" # Example URL
+"Bug Tracker" = "https://github.com/yourusername/intelliscrape-studio/issues"
+
+[project.scripts]
+# If you want to install the CLI tool system-wide
+# intelliscrape-cli = "intelliscrape_studio.cli:main" # Assuming you create a cli entry point
+
+[tool.setuptools]
+packages = ["intelliscrape_studio"] # Specify the package directory
+package_dir = {"" = "src"} # Tell setuptools source is in src/
+include-package-data = true # Include non-code files specified in MANIFEST.in (if any)
+
+[tool.pytest.ini_options]
+# Basic pytest configuration (matches existing pytest.ini)
+pythonpath = [".", "src"]
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+
+# Example Ruff configuration (linter/formatter)
+# [tool.ruff]
+# line-length = 88
+# select = ["E", "F", "W", "I"] # Select error codes
+# ignore = []
+
+# [tool.ruff.format]
+# quote-style = "double" 

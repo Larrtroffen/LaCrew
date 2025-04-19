@@ -1,0 +1,45 @@
+# IntelliScrape Studio Settings
+
+# LLM Configuration
+llm:
+  default_provider: openai # Options: openai, anthropic, google (to be implemented in providers)
+  default_model: "gpt-4o-mini" # Example model, adjust based on provider
+  temperature: 0.7
+  max_tokens: 2048
+  request_timeout: 120 # seconds
+  max_retries: 3
+
+# Scraping Configuration
+scraping:
+  # Browser settings (Playwright)
+  browser:
+    browser_type: edge
+    headless: true # Run browser in headless mode (true/false)
+    timeout: 60000 # Default navigation timeout in milliseconds
+    user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36" # Optional: Custom user agent
+    webdriver_path: "D:\\web_driver\\msedgedriver.exe"
+  # Search engine settings
+  search:
+    default_provider: duckduckgo # Options: duckduckgo, google_cse, bing (to be implemented)
+    max_results: 5 # Default number of search results to request
+  # General scraping limits
+  max_pages_per_task: 50 # Maximum number of pages to visit for a single task
+  max_time_per_task: 300 # Maximum runtime in seconds for a single task (0 for unlimited)
+
+# Data Handling
+data:
+  default_export_dir: "results" # Directory to save exported files
+  save_template_dir: "templates" # Directory to save/load table templates
+
+# Logging Configuration
+logging:
+  level: INFO # Options: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  log_file: "logs/intelliscrape_studio.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  max_bytes: 10485760 # 10MB
+  backup_count: 5
+
+# --- UI Settings (Optional) ---
+ui:
+  theme: light # (light or dark) - Streamlit handles theme
+  show_example_schema: true
