@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # IntelliScrape Studio
 
 基于LLM的智能Web数据爬取与结构化工具
@@ -74,3 +75,9 @@ streamlit run app.py
 ## 许可证
 
 MIT License 
+=======
+# LaCrew
+An AI-powered internet crew for structure data.
+
+Coming soon, Simple thought is build a ai-guided crew for collect multimodal data, then translate them to structure data.
+>>>>>>> bb5fe5d3b4684832f041e308a20a8ac3e5b9fd57
